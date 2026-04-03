@@ -53,7 +53,13 @@ const Bookmarks = () => {
               <ArrowLeft className="w-5 h-5" />
             </Link>
             
-            <h1 className="text-2xl font-black tracking-tight text-white">
+            <img 
+              src="https://static.prod-images.emergentagent.com/jobs/9fa2035f-4651-4eaf-80e3-43f25667125a/images/69f2aefbf21d071c5793e03df39803d40d674c6749900143e91ce216698d49d4.png" 
+              alt="Duck Duck Dex" 
+              className="h-10 w-auto"
+            />
+            
+            <h1 className="text-2xl font-black tracking-tight text-white ml-2">
               Bookmarks
             </h1>
             
