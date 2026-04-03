@@ -29,7 +29,7 @@ const Home = () => {
       <div className="max-w-4xl w-full relative z-10">
         <div className="flex justify-center mb-8">
           <img 
-            src="https://static.prod-images.emergentagent.com/jobs/9fa2035f-4651-4eaf-80e3-43f25667125a/images/69f2aefbf21d071c5793e03df39803d40d674c6749900143e91ce216698d49d4.png" 
+            src="https://static.prod-images.emergentagent.com/jobs/9fa2035f-4651-4eaf-80e3-43f25667125a/images/0d9917a68681d683f702be452e88a829d12f009d15ea9ef559f8258e2880c569.png" 
             alt="Duck Duck Dex Logo" 
             className="w-full max-w-2xl h-auto"
           />
