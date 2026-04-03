@@ -106,7 +106,7 @@ const Results = () => {
               className="flex items-center gap-3 text-xl font-black tracking-tight text-white hover:text-gray-300 transition-colors"
             >
               <img 
-                src="https://static.prod-images.emergentagent.com/jobs/9fa2035f-4651-4eaf-80e3-43f25667125a/images/0d9917a68681d683f702be452e88a829d12f009d15ea9ef559f8258e2880c569.png" 
+                src="https://static.prod-images.emergentagent.com/jobs/9fa2035f-4651-4eaf-80e3-43f25667125a/images/50bf172520e2771f580f8138b5d4c473db277146b8430f8fcf6594afcb87406f.png" 
                 alt="Duck Duck Dex" 
                 className="h-10 w-auto"
               />
