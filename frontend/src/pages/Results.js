@@ -96,28 +96,28 @@ const Results = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Sticky Header */}
-      <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-[#E5E5E5]">
+      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-neutral-800">
         <div className="max-w-4xl mx-auto py-4 px-6 md:px-12">
           <div className="flex items-center gap-4">
             <Link 
               to="/" 
-              className="text-xl font-black tracking-tight text-[#111111] hover:text-[#525252] transition-colors"
+              className="text-xl font-black tracking-tight text-white hover:text-gray-300 transition-colors"
             >
-              Dual Search
+              | Duck • Duck • Dex |
             </Link>
             
             <form onSubmit={handleSearch} className="flex-1">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#525252] w-5 h-5" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   data-testid="search-input-header"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search..."
-                  className="w-full bg-white border-2 border-[#E5E5E5] focus:border-[#111111] rounded-full pl-12 pr-4 py-2.5 text-base shadow-sm transition-all outline-none text-[#111111] placeholder:text-[#8A8A8A]"
+                  className="w-full bg-neutral-900 border-2 border-neutral-700 focus:border-white rounded-full pl-12 pr-4 py-2.5 text-base shadow-sm transition-all outline-none text-white placeholder:text-gray-500"
                 />
               </div>
             </form>
@@ -125,7 +125,7 @@ const Results = () => {
             <button
               data-testid="filter-toggle-button"
               onClick={() => setShowFilters(!showFilters)}
-              className="p-2.5 rounded-full hover:bg-[#F9F9F9] text-[#525252] hover:text-[#111111] transition-all border border-[#E5E5E5]"
+              className="p-2.5 rounded-full hover:bg-neutral-800 text-gray-400 hover:text-white transition-all border border-neutral-700"
             >
               <Filter className="w-5 h-5" />
             </button>
@@ -133,7 +133,7 @@ const Results = () => {
             <Link
               to="/bookmarks"
               data-testid="bookmarks-link"
-              className="p-2.5 rounded-full hover:bg-[#F9F9F9] text-[#525252] hover:text-[#111111] transition-all border border-[#E5E5E5]"
+              className="p-2.5 rounded-full hover:bg-neutral-800 text-gray-400 hover:text-white transition-all border border-neutral-700"
             >
               <BookmarkCheck className="w-5 h-5" />
             </Link>
@@ -141,14 +141,14 @@ const Results = () => {
           
           {/* Filters Panel */}
           {showFilters && (
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-[#E5E5E5] mt-4" data-testid="filters-panel">
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-neutral-800 mt-4" data-testid="filters-panel">
               <div className="flex items-center gap-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#8A8A8A]">Region:</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-gray-500">Region:</label>
                 <select
                   data-testid="region-select"
                   value={region}
                   onChange={(e) => setRegion(e.target.value)}
-                  className="px-3 py-1.5 text-sm border border-[#E5E5E5] rounded-lg bg-white text-[#111111] focus:border-[#111111] outline-none transition-colors"
+                  className="px-3 py-1.5 text-sm border border-neutral-700 rounded-lg bg-neutral-900 text-white focus:border-white outline-none transition-colors"
                 >
                   <option value="us-en">United States</option>
                   <option value="uk-en">United Kingdom</option>
@@ -158,12 +158,12 @@ const Results = () => {
               </div>
               
               <div className="flex items-center gap-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#8A8A8A]">Date:</label>
+                <label className="text-xs font-bold uppercase tracking-wider text-gray-500">Date:</label>
                 <select
                   data-testid="date-select"
                   value={dateFilter}
                   onChange={(e) => setDateFilter(e.target.value)}
-                  className="px-3 py-1.5 text-sm border border-[#E5E5E5] rounded-lg bg-white text-[#111111] focus:border-[#111111] outline-none transition-colors"
+                  className="px-3 py-1.5 text-sm border border-neutral-700 rounded-lg bg-neutral-900 text-white focus:border-white outline-none transition-colors"
                 >
                   <option value="">Any time</option>
                   <option value="day">Past 24 hours</option>
@@ -180,9 +180,9 @@ const Results = () => {
                   id="safeSearch"
                   checked={safeSearch}
                   onChange={(e) => setSafeSearch(e.target.checked)}
-                  className="w-4 h-4 rounded border-[#E5E5E5] text-[#111111] focus:ring-2 focus:ring-[#111111]/20"
+                  className="w-4 h-4 rounded border-neutral-700 text-white focus:ring-2 focus:ring-white/20"
                 />
-                <label htmlFor="safeSearch" className="text-xs font-bold uppercase tracking-wider text-[#8A8A8A] cursor-pointer">
+                <label htmlFor="safeSearch" className="text-xs font-bold uppercase tracking-wider text-gray-500 cursor-pointer">
                   Safe Search
                 </label>
               </div>
@@ -190,7 +190,7 @@ const Results = () => {
               <button
                 data-testid="apply-filters-button"
                 onClick={() => performSearch(query)}
-                className="ml-auto px-4 py-1.5 bg-[#111111] text-white text-sm font-medium rounded-full hover:bg-[#333333] transition-colors"
+                className="ml-auto px-4 py-1.5 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-200 transition-colors"
               >
                 Apply Filters
               </button>
@@ -200,18 +200,18 @@ const Results = () => {
       </header>
 
       {/* Results */}
-      <main className="max-w-4xl mx-auto py-8 px-6 md:px-12">
+      <main className="max-w-4xl mx-auto py-8 px-6 md:px-12 pb-20">
         {loading ? (
           <div className="flex items-center justify-center py-20" data-testid="loading-indicator">
             <div className="text-center">
-              <div className="w-12 h-12 border-4 border-[#E5E5E5] border-t-[#111111] rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-sm text-[#8A8A8A]">Searching...</p>
+              <div className="w-12 h-12 border-4 border-neutral-800 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-sm text-gray-500">Searching...</p>
             </div>
           </div>
         ) : results.length === 0 ? (
           <div className="text-center py-20" data-testid="no-results">
-            <p className="text-lg text-[#525252]">No results found</p>
-            <p className="text-sm text-[#8A8A8A] mt-2">Try a different search term</p>
+            <p className="text-lg text-gray-300">No results found</p>
+            <p className="text-sm text-gray-500 mt-2">Try a different search term</p>
           </div>
         ) : (
           <div className="flex flex-col space-y-2" data-testid="results-list">
@@ -219,7 +219,7 @@ const Results = () => {
               <div
                 key={index}
                 data-testid={`result-item-${index}`}
-                className="group relative flex flex-col gap-2 p-6 rounded-2xl hover:bg-[#F9F9F9] transition-all duration-300 ease-out border border-transparent hover:border-[#E5E5E5]"
+                className="group relative flex flex-col gap-2 p-6 rounded-2xl hover:bg-neutral-900 transition-all duration-300 ease-out border border-transparent hover:border-neutral-800"
               >
                 {/* Source Badge */}
                 <div className="flex items-center gap-2">
@@ -241,19 +241,19 @@ const Results = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid={`result-title-${index}`}
-                  className="text-xl font-bold tracking-tight text-[#111111] hover:text-[#525252] transition-colors"
+                  className="text-xl font-bold tracking-tight text-[#89CFF0] hover:text-[#89CFF0]/80 transition-colors visited:text-[#FFD700]"
                 >
                   {result.title}
                 </a>
                 
                 {/* URL */}
-                <p className="text-xs text-[#8A8A8A] break-all" data-testid={`result-url-${index}`}>
+                <p className="text-xs text-gray-500 break-all" data-testid={`result-url-${index}`}>
                   {result.url}
                 </p>
                 
                 {/* Snippet */}
                 {result.snippet && (
-                  <p className="text-base leading-relaxed text-[#525252]" data-testid={`result-snippet-${index}`}>
+                  <p className="text-base leading-relaxed text-gray-300" data-testid={`result-snippet-${index}`}>
                     {result.snippet}
                   </p>
                 )}
@@ -262,10 +262,10 @@ const Results = () => {
                 <button
                   data-testid={`bookmark-button-${index}`}
                   onClick={() => handleBookmark(result)}
-                  className={`absolute right-6 top-6 p-2 rounded-full hover:bg-[#E5E5E5] transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 ${
+                  className={`absolute right-6 top-6 p-2 rounded-full hover:bg-neutral-800 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 ${
                     bookmarkedUrls.has(result.url)
-                      ? 'text-[#111111] opacity-100 bg-[#E5E5E5]'
-                      : 'text-[#8A8A8A] hover:text-[#111111]'
+                      ? 'text-white opacity-100 bg-neutral-800'
+                      : 'text-gray-500 hover:text-white'
                   }`}
                 >
                   {bookmarkedUrls.has(result.url) ? (
@@ -279,6 +279,18 @@ const Results = () => {
           </div>
         )}
       </main>
+      
+      {/* Footer link */}
+      <div className="fixed bottom-6 w-full text-center">
+        <a 
+          href="https://my.bio/theycallmegaddy" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-sm text-[#89CFF0] hover:text-[#89CFF0]/80 transition-colors"
+        >
+          gad_E
+        </a>
+      </div>
     </div>
   );
 };

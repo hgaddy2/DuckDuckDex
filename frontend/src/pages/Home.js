@@ -14,7 +14,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden bg-black">
       {/* Background image with low opacity */}
       <div 
         className="absolute inset-0 opacity-5"
@@ -27,24 +27,24 @@ const Home = () => {
       />
       
       <div className="max-w-4xl w-full relative z-10">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#111111] text-center mb-8">
-          Dual Search
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white text-center mb-8">
+          | Duck • Duck • Dex |
         </h1>
         
-        <p className="text-base sm:text-lg text-[#525252] text-center mb-12 leading-relaxed">
+        <p className="text-base sm:text-lg text-gray-300 text-center mb-12 leading-relaxed">
           Search across Yandex & DuckDuckGo simultaneously
         </p>
         
         <form onSubmit={handleSearch} className="w-full">
           <div className="relative w-full">
-            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-[#525252] w-6 h-6" />
+            <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400 w-6 h-6" />
             <input
               type="text"
               data-testid="search-input"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Enter your search query..."
-              className="w-full bg-white border-2 border-[#E5E5E5] focus:border-[#111111] rounded-full pl-16 pr-6 py-4 text-lg shadow-sm transition-all outline-none text-[#111111] placeholder:text-[#8A8A8A]"
+              className="w-full bg-neutral-900 border-2 border-neutral-700 focus:border-white rounded-full pl-16 pr-6 py-4 text-lg shadow-sm transition-all outline-none text-white placeholder:text-gray-500"
             />
           </div>
         </form>
@@ -54,12 +54,24 @@ const Home = () => {
             <div className="inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded bg-[#FC3F1D]/10 text-[#FC3F1D]">
               Yandex
             </div>
-            <span className="text-sm text-[#8A8A8A]">+</span>
+            <span className="text-sm text-gray-500">+</span>
             <div className="inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded bg-[#DE5833]/10 text-[#DE5833]">
               DuckDuckGo
             </div>
           </div>
         </div>
+      </div>
+      
+      {/* Footer link */}
+      <div className="absolute bottom-6 w-full text-center">
+        <a 
+          href="https://my.bio/theycallmegaddy" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-sm text-[#89CFF0] hover:text-[#89CFF0]/80 transition-colors"
+        >
+          gad_E
+        </a>
       </div>
     </div>
   );

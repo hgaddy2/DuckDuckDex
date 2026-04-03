@@ -40,48 +40,48 @@ const Bookmarks = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-[#E5E5E5]">
+      <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-neutral-800">
         <div className="max-w-4xl mx-auto py-4 px-6 md:px-12">
           <div className="flex items-center gap-4">
             <Link 
               to="/" 
               data-testid="back-home-link"
-              className="p-2 rounded-full hover:bg-[#F9F9F9] text-[#525252] hover:text-[#111111] transition-all"
+              className="p-2 rounded-full hover:bg-neutral-800 text-gray-400 hover:text-white transition-all"
             >
               <ArrowLeft className="w-5 h-5" />
             </Link>
             
-            <h1 className="text-2xl font-black tracking-tight text-[#111111]">
+            <h1 className="text-2xl font-black tracking-tight text-white">
               Bookmarks
             </h1>
             
             <div className="ml-auto flex items-center gap-2">
-              <BookmarkCheck className="w-5 h-5 text-[#525252]" />
-              <span className="text-sm text-[#8A8A8A]">{bookmarks.length} saved</span>
+              <BookmarkCheck className="w-5 h-5 text-gray-400" />
+              <span className="text-sm text-gray-500">{bookmarks.length} saved</span>
             </div>
           </div>
         </div>
       </header>
 
       {/* Bookmarks List */}
-      <main className="max-w-4xl mx-auto py-8 px-6 md:px-12">
+      <main className="max-w-4xl mx-auto py-8 px-6 md:px-12 pb-20">
         {loading ? (
           <div className="flex items-center justify-center py-20" data-testid="loading-indicator">
             <div className="text-center">
-              <div className="w-12 h-12 border-4 border-[#E5E5E5] border-t-[#111111] rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-sm text-[#8A8A8A]">Loading bookmarks...</p>
+              <div className="w-12 h-12 border-4 border-neutral-800 border-t-white rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-sm text-gray-500">Loading bookmarks...</p>
             </div>
           </div>
         ) : bookmarks.length === 0 ? (
           <div className="text-center py-20" data-testid="no-bookmarks">
-            <BookmarkCheck className="w-16 h-16 text-[#E5E5E5] mx-auto mb-4" />
-            <p className="text-lg text-[#525252]">No bookmarks yet</p>
-            <p className="text-sm text-[#8A8A8A] mt-2">Start searching and save your favorite results</p>
+            <BookmarkCheck className="w-16 h-16 text-neutral-800 mx-auto mb-4" />
+            <p className="text-lg text-gray-300">No bookmarks yet</p>
+            <p className="text-sm text-gray-500 mt-2">Start searching and save your favorite results</p>
             <Link
               to="/"
-              className="inline-block mt-6 px-6 py-3 bg-[#111111] text-white font-medium rounded-full hover:bg-[#333333] transition-colors"
+              className="inline-block mt-6 px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-colors"
             >
               Start Searching
             </Link>
@@ -92,7 +92,7 @@ const Bookmarks = () => {
               <div
                 key={bookmark.id}
                 data-testid={`bookmark-item-${index}`}
-                className="group relative flex flex-col gap-2 p-6 rounded-2xl hover:bg-[#F9F9F9] transition-all duration-300 ease-out border border-transparent hover:border-[#E5E5E5]"
+                className="group relative flex flex-col gap-2 p-6 rounded-2xl hover:bg-neutral-900 transition-all duration-300 ease-out border border-transparent hover:border-neutral-800"
               >
                 {/* Source Badge */}
                 <div className="flex items-center gap-2">
@@ -113,19 +113,19 @@ const Bookmarks = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-testid={`bookmark-title-${index}`}
-                  className="text-xl font-bold tracking-tight text-[#111111] hover:text-[#525252] transition-colors"
+                  className="text-xl font-bold tracking-tight text-[#89CFF0] hover:text-[#89CFF0]/80 transition-colors visited:text-[#FFD700]"
                 >
                   {bookmark.title}
                 </a>
                 
                 {/* URL */}
-                <p className="text-xs text-[#8A8A8A] break-all">
+                <p className="text-xs text-gray-500 break-all">
                   {bookmark.url}
                 </p>
                 
                 {/* Snippet */}
                 {bookmark.snippet && (
-                  <p className="text-base leading-relaxed text-[#525252]">
+                  <p className="text-base leading-relaxed text-gray-300">
                     {bookmark.snippet}
                   </p>
                 )}
@@ -134,7 +134,7 @@ const Bookmarks = () => {
                 <button
                   data-testid={`delete-bookmark-${index}`}
                   onClick={() => handleDelete(bookmark.id)}
-                  className="absolute right-6 top-6 p-2 rounded-full hover:bg-red-50 text-[#8A8A8A] hover:text-red-600 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+                  className="absolute right-6 top-6 p-2 rounded-full hover:bg-red-900/20 text-gray-500 hover:text-red-400 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
                 >
                   <Trash2 className="w-5 h-5" />
                 </button>
@@ -143,6 +143,18 @@ const Bookmarks = () => {
           </div>
         )}
       </main>
+      
+      {/* Footer link */}
+      <div className="fixed bottom-6 w-full text-center">
+        <a 
+          href="https://my.bio/theycallmegaddy" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-sm text-[#89CFF0] hover:text-[#89CFF0]/80 transition-colors"
+        >
+          gad_E
+        </a>
+      </div>
     </div>
   );
 };
