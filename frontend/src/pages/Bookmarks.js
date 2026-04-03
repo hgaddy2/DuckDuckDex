@@ -54,7 +54,7 @@ const Bookmarks = () => {
             </Link>
             
             <img 
-              src="https://static.prod-images.emergentagent.com/jobs/9fa2035f-4651-4eaf-80e3-43f25667125a/images/7c06562850ae5f5e82ca1a4e67791974bb538a73382349bade9289e327eff93c.png" 
+              src="https://static.prod-images.emergentagent.com/jobs/9fa2035f-4651-4eaf-80e3-43f25667125a/images/956910d9b8045e69574f2b199a2f3a5ce75ab05a4cef4dd9243fda537e84bdb8.png" 
               alt="Duck Duck Dex" 
               className="h-12 w-auto"
             />
