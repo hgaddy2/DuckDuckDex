@@ -8,4 +8,7 @@ def search():
     data = request.get_json()
     return jsonify({"status": "success", "results": []})
 
+if __name__ == '__main__':
+    app.run(debug=True)
+
 # Vercel needs the 'app' variable exposed at the module level
